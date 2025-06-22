@@ -1,12 +1,4 @@
-todoList=[{
-    name:'make dinner',
-    dueDate:'30-06-2025'
-},
-{
-    name:'clean room',
-    dueDate:'29-06-2025'
-}];
-renderTodoList();
+todoList=[];
 
 function renderTodoList(){
     let todoListHTML=``;
