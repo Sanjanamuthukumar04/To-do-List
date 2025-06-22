@@ -20,18 +20,20 @@ function renderTodoList(){
     document.querySelector(".js-todo-list").innerHTML=todoListHTML;
 }
 
-function addTodo(){
-    const inputElement=document.querySelector('.js-name-input');
-    const name=inputElement.value; //value property represents text in the text box
-    const dateInputElement=document.querySelector('.js-due-date-input');
-    const dueDate=dateInputElement.value;
+function addTodo() {
+    const inputElement = document.querySelector('.js-name-input');
+    const name = inputElement.value.trim(); // remove whitespace
+    const dateInputElement = document.querySelector('.js-due-date-input');
+    const dueDate = dateInputElement.value;
+
+    if (name === '') return; // ⛔ Prevent adding empty tasks
 
     todoList.push({
         name,
         dueDate
     });
 
-    inputElement.value='';
-
+    inputElement.value = '';
     renderTodoList();
 }
+
